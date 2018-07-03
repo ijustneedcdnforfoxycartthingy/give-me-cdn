@@ -4955,6 +4955,10 @@ body {
 	min-width: 320px;
 }
 
+#fc body {
+    background: rgb(249, 249, 249);
+}
+
 #wrapper {
 	overflow: hidden;
 	-webkit-transition: -webkit-transform .27s linear;
