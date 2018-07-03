@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "icomoon";
-	src: url("http://wonder-shop.wawee.de/final-v6/fonts/icomoon.eot?h89dcz");
-	src: url("http://wonder-shop.wawee.de/final-v6/fonts/icomoon.eot?h89dcz#iefix") format("embedded-opentype"), url("http://wonder-shop.wawee.de/final-v6/fonts/icomoon.ttf?h89dcz") format("truetype"), url("http://wonder-shop.wawee.de/final-v6/fonts/icomoon.woff?h89dcz") format("woff"), url("http://wonder-shop.wawee.de/final-v6/fonts/icomoon.svg?h89dcz#icomoon") format("svg");
+	src: url("/fonts/icomoon.eot?h89dcz");
+	src: url("/fonts/icomoon.eot?h89dcz#iefix") format("embedded-opentype"), url("/fonts/icomoon.ttf?h89dcz") format("truetype"), url("/fonts/icomoon.woff?h89dcz") format("woff"), url("/fonts/icomoon.svg?h89dcz#icomoon") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
