@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html id="fc">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{{ config.store_name }} Secure Checkout</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+    <!--[if lt IE 9 ]>
+        <script type="text/javascript">
+            var IEElms = ['article', 'aside', 'header', 'main', 'nav', 'section'];
+            for (var i = 0; i < IEElms.length; i++) {
+                document.createElement(IEElms[i]);
+            };
+        </script>
+    <![endif]-->
+
+    
+    
+
+    <!-- FC script insertion -->{{ fc_header_content|raw }}<!-- /FC script insertion -->
+    <!--[if lt IE 9 ]>
+        <script src="{{ config.cdn_static_path }}scripts/respond/respond.1.4.2.js" charset="utf-8"></script>
+        <style>
+            #fc label.fc-form-label--with-placeholder {
+                display:block !important;
+                left:0 !important;
+                width:auto !important;
+                height:50px !important;
+                clip:auto !important;
+                position:relative !important;
+                text-align:left !important;
+            }
+        </style>
+    <![endif]-->
+
+</head>
+<body>
+<!-- has to be here because of chrome bug -->
+    {% include 'svg.inc.twig' %}
+
+    {% import "utils.inc.twig" as utils %}
+
+    {% embed 'checkout.inc.twig' %}
+    {% block checkout %}
+<div id="wrapper" role="application">
+    <header id="header" class="position-absolute w-100 px-3">
+        <nav class="navbar navbar-light position-static">
+            <div class="navbar-brand-holder d-flex align-items-end">
+                <a class="navbar-brand d-inline-flex flex-column align-items-center font-weight-bold" href="https://www.wonder.shop/">
+                <div class="navbar-brand-wrap">
+                    <div class="logo-wrap d-block">
+                        <ul class="list-human d-flex justify-content-center list-unstyled">
+                            <li class="l-arm" style="transform: rotate(-20deg);"></li>
+                            <li class="circule"></li>
+                            <li class="r-arm" style="transform: rotate(20deg);"></li>
+                        </ul>
+                        <span>wonder<span class="text-primary">.shop</span></span>
+                    </div>
+                </div>
+            </a>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="cart-steps">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <nav>
+                                <div class="nav nav-tabs justify-content-sm-center flex-nowrap position-relative border-0" role="tablist">
+                                    <a class="nav-item nav-link border-0 mb-0 position-relative text-center" href="https://www.wonder.shop/cart" role="tab" aria-controls="nav-cart-1" aria-selected="false">Tab 1</a>
+                                    <a class="nav-item nav-link border-0 mb-0 position-relative text-center" href="https://www.wonder.shop/cart" role="tab" aria-controls="nav-cart-2" aria-selected="false">Tab 2</a>
+                                    <a class="nav-item nav-link border-0 mb-0 position-relative text-center active show" href="https://www.wonder.shop/cart" role="tab" aria-controls="nav-cart-3" aria-selected="true">Tab3</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="tab-content-holder position-relative">
+                            <div class="tab-content mod mx-auto">
+                                <div class="tab-pane fade active show" id="cart-content-4" role="tabpanel" aria-labelledby="nav-cart-4">
+                                    <h2 class="tab-title text-center h4">Address Details</h2>
+                                    <div class="column-list d-flex flex-column flex-md-row justify-content-center align-items-center align-items-md-start pb-5 mb-5">
+                                        <div class="column">
+                                            <div class="list bg-white">
+                                                <div class="card card-body-mod border-0 rounded-0 bg-transparent">
+                                                    <form class="tab-form needs-validation" novalidate="">
+                                                        <div class="form-subtitle-holder">
+                                                            <h3 class="form-subtitle h6 text-center mb-0">Enter Your E-Mail Address to start</h3>
+                                                        </div>
+                                                        <div class="form-group position-relative">
+                                                            <input id="email1" type="email" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                            <label class="form-label position-absolute" for="email1">Twój adres mailowy</label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="list bg-white">
+                                                <div class="card card-body-mod border-0 rounded-0 bg-transparent">
+                                                    <form class="tab-form needs-validation" novalidate="">
+                                                        <div class="form-subtitle-holder">
+                                                            <h3 class="form-subtitle h6 text-center mb-0">Shipping Address</h3>
+                                                        </div>
+                                                        <div class="form-group position-relative">
+                                                            <input id="userName3" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                            <label class="form-label position-absolute" for="userName3">Full name</label>
+                                                        </div>
+                                                        <div class="form-group position-relative">
+                                                            <input id="street" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                            <label class="form-label position-absolute" for="street">Street and Number</label>
+                                                        </div>
+                                                        <div class="form-group-holder">
+                                                            <div class="form-group position-relative mb-0">
+                                                                <textarea class="form-control border-0 rounded-0" id="textarea1" rows="3" required=""></textarea>
+                                                                <label class="form-label form-label-textarea position-absolute" for="textarea1">Additional information</label>
+                                                            </div>
+                                                            <div class="descr-mod">
+                                                                <p>Opcjonalne, np. adres cd., dodatkowe wskazówki itp.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group position-relative">
+                                                            <input id="postcode" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                            <label class="form-label position-absolute" for="postcode">Kod Pocztowy</label>
+                                                        </div>
+                                                        <div class="form-group position-relative">
+                                                            <input id="city" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                            <label class="form-label position-absolute" for="city">City</label>
+                                                        </div>
+                                                        <div class="form-group position-relative">
+                                                            <input id="country" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                            <label class="form-label position-absolute" for="country">Country</label>
+                                                        </div>
+                                                        <div class="btn-holder">
+                                                            <a class="btn btn-info btn-add d-inline-flex justify-content-between align-items-center text-uppercase w-100" data-toggle="collapse" href="#collapseItem-1" aria-expanded="false" aria-controls="collapseItem-1">
+                                                                <span>BILLING ADDRESS</span>
+                                                                <i class="icon-plus"></i>
+                                                            </a>
+                                                        </div>
+                                                        <div class="collapse w-100" id="collapseItem-1">
+                                                            <div class="form-group position-relative">
+                                                                <input id="userName4" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                                <label class="form-label position-absolute" for="userName4">First name</label>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <input id="userName5" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                                <label class="form-label position-absolute" for="userName5">Last name</label>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <input id="street2" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                                <label class="form-label position-absolute" for="street2">Street and Number</label>
+                                                            </div>
+                                                            <div class="form-group-holder">
+                                                                <div class="form-group position-relative mb-0">
+                                                                    <textarea class="form-control border-0 rounded-0" id="textarea2" rows="3" required=""></textarea>
+                                                                    <label class="form-label form-label-textarea position-absolute" for="textarea2">Additional information</label>
+                                                                </div>
+                                                                <div class="descr-mod">
+                                                                    <p>Opcjonalne, np. adres cd., dodatkowe wskazówki itp.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <input id="postcode2" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                                <label class="form-label position-absolute" for="postcode2">Kod Pocztowy</label>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <input id="city2" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                                <label class="form-label position-absolute" for="city2">City</label>
+                                                            </div>
+                                                            <div class="form-group position-relative">
+                                                                <input id="country2" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                                <label class="form-label position-absolute" for="country2">Country</label>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column">
+                                            <div class="list bg-white">
+                                                <h3 class="column-title h6 text-center mb-0">Rodzaj płatnośći</h3>
+                                                <div class="card card-body-small border-0 rounded-0 bg-transparent">
+                                                    <form class="payment-form">
+                                                        <div class="custom-control custom-radio d-flex align-items-center flex-wrap">
+                                                            <input class="custom-control-input" type="radio" name="exampleRadios" id="radio1" value="option1" checked="">
+                                                            <label class="custom-control-label font-weight-bold" for="radio1">Szybki przelew <span class="additional-info font-weight-normal">(gratis)</span></label>
+                                                            <div class="text-box w-100">
+                                                                <p>Po złożeniu zamówienia zostaniesz przekierowany na stronę Przelewy 24, gdzie będziesz mógł zlecić przelew bezpośrednio z Twojego banku. Po pomyślnej realizacji płatności zamówienie zostanie sfinalizowane.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="custom-control custom-radio d-flex align-items-center flex-wrap">
+                                                            <input class="custom-control-input" type="radio" name="exampleRadios" id="radio2" value="option2">
+                                                            <label class="custom-control-label font-weight-bold" for="radio2">PayPal&nbsp;<span class="additional-info font-weight-normal">(gratis)</span></label>
+                                                            <div class="pay-cards d-inline-block ml-auto">
+                                                                <img src="https://ijustneedcdnforfoxycartthingy.github.io/give-me-cdn/images/paypal-orange.svg" width="30" height="30" alt="PayPal">
+                                                            </div>
+                                                        </div>
+                                                        <div class="custom-control custom-radio d-flex align-items-center flex-wrap">
+                                                            <input class="custom-control-input" type="radio" name="exampleRadios" id="radio3" value="option3">
+                                                            <label class="custom-control-label font-weight-bold" for="radio3">Karta płatnicza&nbsp;<span class="additional-info font-weight-normal">(gratis)</span></label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio d-flex align-items-center flex-wrap">
+                                                            <input class="custom-control-input" type="radio" name="exampleRadios" id="radio4" value="option3">
+                                                            <label class="custom-control-label font-weight-bold" for="radio4">Za pobraniem&nbsp;<span class="additional-info font-weight-normal">(gratis)</span></label>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="list bg-white">
+                                                <a class="btn btn-info btn-info-mod btn-add d-flex align-items-center justify-content-between" data-toggle="collapse" href="#collapseItem-2" aria-expanded="false" aria-controls="collapseItem-2">
+                                                    <strong>Discount Code</strong>
+                                                    <i class="icon-plus"></i>
+                                                </a>
+                                                <div class="collapse w-100" id="collapseItem-2">
+                                                    <div class="card card-body-mod border-0 rounded-0 bg-transparent pt-4">
+                                                        <form class="tab-form needs-validation" novalidate="">
+                                                            <div class="form-group position-relative">
+                                                                <input id="discountCode" type="text" class="form-control border-0 rounded-0" required="" autocomplete="off">
+                                                                <label class="form-label position-absolute" for="discountCode">Discount code</label>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="list basket-list bg-white">
+                                                <h3 class="column-title h5 text-center mb-0">Your basket</h3>
+                                                <div class="products-count text-center">
+                                                    <p>(2 Produkty)</p>
+                                                </div>
+                                                <div class="card card-body-mod border-0 rounded-0 bg-transparent">
+                                                    <ul class="product-list list-unstyled">
+                                                        <li class="d-flex justify-content-between">
+                                                            <div class="product-info d-flex flex-column">
+                                                                <span>Suma produktów</span>
+                                                                <span class="additional-info">(w twoim koszyku)</span>
+                                                            </div>
+                                                            <div class="price text-uppercase">PLN 2580,-</div>
+                                                        </li>
+                                                        <li class="d-flex justify-content-between">
+                                                            <div class="product-info d-flex flex-column">
+                                                                <span>Koszty wysyłki</span>
+                                                                <span class="additional-info">(Dostawa z wniesieniem)</span>
+                                                            </div>
+                                                            <div class="price text-uppercase">PLN 79,-</div>
+                                                        </li>
+                                                        <li class="d-flex justify-content-between">
+                                                            <div class="product-info d-flex flex-column">
+                                                                <span>Udzielony Rabat</span>
+                                                                <span class="additional-info">(kod rabatowy: xyz)</span>
+                                                            </div>
+                                                            <div class="price text-uppercase">- PLN 299,-</div>
+                                                        </li>
+                                                        <li></li>
+                                                    </ul>
+                                                    <div class="total-price-holder d-flex justify-content-between">
+                                                        <strong class="text">Suma do zapłaty</strong>
+                                                        <span class="total-price text-primary h4 mb-0">PLN 2360,-</span>
+                                                    </div>
+                                                    <div class="card-footer border-0 bg-transparent">
+                                                        
+                                                        <button class="btn btn-success btn-success-mod w-100" data-fc-id="submit-button">Zamawiam i płacę</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="module-delivery position-relative">
+                                        <div class="holder d-flex flex-column align-items-center flex-lg-row">
+                                            <div class="delivery-list-holder">
+                                                <ul class="delivery-list list-unstyled d-flex flex-column flex-md-row">
+                                                    <li class="d-flex justify-content-center justify-content-md-start">
+                                                        <div class="item-holder d-flex justify-content-center align-items-center">
+                                                            <i class="icon-clock"></i>
+                                                        </div>
+                                                        <div class="text-box d-flex flex-column">
+                                                            <div class="title-holder d-flex flex-column">
+                                                                <span class="title">Estimated delivery date</span>
+                                                                <span>If all items are delivered together</span>
+                                                            </div>
+                                                            <div class="delivery-meta d-flex align-items-center text-primary h4 mb-0">
+                                                                <p>We.&nbsp;05.02. – Fr. 08.02.</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="d-flex justify-content-center justify-content-md-start">
+                                                        <div class="item-holder d-flex justify-content-center align-items-center">
+                                                            <i class="icon-car-back"></i>
+                                                        </div>
+                                                        <div class="text-box d-flex flex-column">
+                                                            <div class="title-holder d-flex flex-column">
+                                                                <span class="title">Delivery costs</span>
+                                                                <span>Costs of delivery is for Orders as Guest</span>
+                                                            </div>
+                                                            <div class="delivery-meta d-flex align-items-center text-primary h4 mb-0">
+                                                                <p>PLN 79,-</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="d-flex justify-content-center justify-content-md-start">
+                                                        <div class="item-holder d-flex justify-content-center align-items-center">
+                                                            <i class="icon-car-back"></i>
+                                                        </div>
+                                                        <div class="text-box d-flex flex-column">
+                                                            <div class="title-holder d-flex flex-column">
+                                                                <span class="title">Included in Your Order</span>
+                                                                <span>For Orders as Guest</span>
+                                                            </div>
+                                                            <div class="delivery-meta d-flex align-items-center">
+                                                                <ul class="check-list list-unstyled text-primary position-relative mb-0">
+                                                                    <li class="h5">Into-home delivery</li>
+                                                                    <li class="h5">14-day Return</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="module-items-in-bsaket">
+                                        <div class="holder">
+                                            <header class="section-header text-center">
+                                                <h2 class="title h6">Items in Your Basket</h2>
+                                            </header>
+                                            <div class="slick-carousel-base">
+                                                <div class="slide d-inline-flex align-items-center bg-white">
+                                                    <div class="image-holder image-fit">
+                                                        <img src="https://ijustneedcdnforfoxycartthingy.github.io/give-me-cdn/images/komoda_art_house_iii_2.jpg" width="600" height="450" alt="image description">
+                                                    </div>
+                                                    <div class="text-holder d-none d-md-block">
+                                                        <div class="product-info d-flex flex-column">
+                                                            <span>Wooden Chair with Legs</span>
+                                                            <strong class="price">PLN 1290,-</strong>
+                                                        </div>
+                                                        <a href="#" class="btn-editor btn btn-info d-inline-flex align-items-center justify-content-center"><i class="icon-pen"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="slide d-inline-flex align-items-center bg-white">
+                                                    <div class="image-holder image-fit">
+                                                        <img src="https://ijustneedcdnforfoxycartthingy.github.io/give-me-cdn/images/komoda_art_house_iii_2.jpg" width="600" height="450" alt="image description">
+                                                    </div>
+                                                    <div class="text-holder d-none d-md-block">
+                                                        <div class="product-info d-flex flex-column">
+                                                            <span>Wooden Chair with Legs</span>
+                                                            <strong class="price">PLN 1290,-</strong>
+                                                        </div>
+                                                        <a href="#" class="btn-editor btn btn-info d-inline-flex align-items-center justify-content-center"><i class="icon-pen"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock checkout %}
+    {% endembed %}
+
+
+    <!-- FC footer script insertion -->{% include template_from_string(fc_footer_content) %}<!-- /FC footer scripts -->
+    <!--[if lt IE 10 ]>
+        <script src="https://{{ config.store_domain }}/static/scripts/placeholder/placeholder_polyfill.jquery.js" charset="utf-8"></script>
+    <![endif]-->
+</body>
+</html>
